@@ -5,7 +5,10 @@ EKFiddle [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFid
 
 Each rule spans one line only. For example,
 
-> **SourceCode**	Web Skimmer (Google exfil)	'replace','IMG','CVV'	https://twitter.com/AffableKraut/status/1362429457932419078?s=20
+```
+SourceCode	Web Skimmer (Google exfil)	'replace','IMG','CVV'	https://twitter.com/AffableKraut/status/1362429457932419078?s=20
+URI	KaiXin EK	\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$
+```
 
 Each of the elements of the rule is deimited by a tab '\t'. The rule consists of the following elements, in this specific order:
 
