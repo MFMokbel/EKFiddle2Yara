@@ -72,6 +72,27 @@ Usage:
    * When a regex/logic payload is found to contain a negative lookahead, a specific comment is added to the Yara rule meta section. There is no alternative for negative lookahead.
    * By default, the tool massages the regex such that it removes most of the non-allowed regex features. This behaviour could be overridden by setting the option to false "**--mrgx=false**"
 
+# Example
+
+For example, to generate a Yara rule that uses Cuckoo module syntax from the **URI** rule shown above:
+
+> *ekfiddle2yara.exe -q*
+
+```yara
+rule ekf_kaixin_ek_22637 : uri
+{
+meta:
+		name      = "KaiXin EK"
+		type      = "uri"
+		author    = "EKFiddle2Yara v1.0"
+		date      = "2021-03-12"
+		reference = "none"
+
+condition:
+		cuckoo.network.http_request(/\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$/)
+}
+```
+
 # Third-party libraries used
 
 - [cpr: for HTTP(S) communications](https://github.com/whoshuu/cpr)
