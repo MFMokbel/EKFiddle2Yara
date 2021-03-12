@@ -8,6 +8,9 @@ Each rule spans one line only. For example,
 ```
 SourceCode	Web Skimmer (Google exfil)	'replace','IMG','CVV'	https://twitter.com/AffableKraut/status/1362429457932419078?s=20
 URI	KaiXin EK	\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$
+IP	Web Skimmer (jashkinagal)	83\.166\.244\.76
+Headers	Malcdn Campaign	9d5e3=eyJ
+Hash	TSS Browlock (audio)	0589be7715d2320e559eae6bd26f3528e97450c70293da2e1e8ce45f77f99ab1|fc59bbb18f923747b9cd3f3b23537ff09c5ad2fdfc1505a4800a3f269a234e65|d6e8aff6202436d3d2c56f686ad04680f2e5afd6ac0e1e0911772e28f2471ad2
 ```
 
 Each of the elements of the rule is deimited by a tab '\t'. The rule consists of the following elements, in this specific order:
