@@ -15,7 +15,7 @@ Each of the elements of the rule is deimited by a tab '\t'. The rule consists of
 1. **type**: takes either of the values (SourceCode|URI|IP|Headers|Hash)
 2. **name**: for example, "Web Skimmer (Google exfil)"
 3. **logic**: detection logic (content match or a regex). For example, "'replace','IMG','CVV'"
-5. **reference**: this is usually a url pointing to the source of the logic. For example, https://twitter.com/AffableKraut/status/1362429457932419078?s=20
+5. **reference**: this is usually a url pointing to the source of the logic (this is optional). For example, https://twitter.com/AffableKraut/status/1362429457932419078?s=20
 
 Note-1: Every line that starts with "##" in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file is a comment, and therefore is ignored.
 
