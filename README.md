@@ -74,7 +74,7 @@ Usage:
 
 # Example
 
-For example, to generate a Yara rule that uses Cuckoo module syntax for the **URI** rule shown above:
+- For example, to generate a Yara rule that uses Cuckoo module syntax for the **URI** rule shown above:
 
 > *ekfiddle2yara.exe -q*
 
@@ -90,6 +90,26 @@ meta:
 
 condition:
 	cuckoo.network.http_request(/\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$/)
+}
+```
+- For example, to generate a Yara rule that takes the ascii and nocase modifiers for the **SourceCode** rule shown above:
+
+> *ekfiddle2yara.exe -n -a*
+
+```yara
+rule ekf_web_skimmer_google_exfil_32229 : sourcecode
+{
+meta:
+	name      = "Web Skimmer (Google exfil)"
+	type      = "sourcecode"
+	author    = "EKFiddle2Yara v1.0"
+	date      = "2021-03-12"
+	reference = "https://twitter.com/AffableKraut/status/1362429457932419078?s=20"
+
+strings:
+	$ekfl = /'replace','IMG','CVV'/
+condition:
+	$ekfl
 }
 ```
 
