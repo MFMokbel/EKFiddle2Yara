@@ -74,7 +74,7 @@ Usage:
 
 # Example
 
-For example, to generate a Yara rule that uses Cuckoo module syntax from the **URI** rule shown above:
+For example, to generate a Yara rule that uses Cuckoo module syntax for the **URI** rule shown above:
 
 > *ekfiddle2yara.exe -q*
 
@@ -82,14 +82,14 @@ For example, to generate a Yara rule that uses Cuckoo module syntax from the **U
 rule ekf_kaixin_ek_22637 : uri
 {
 meta:
-		name      = "KaiXin EK"
-		type      = "uri"
-		author    = "EKFiddle2Yara v1.0"
-		date      = "2021-03-12"
-		reference = "none"
+	name      = "KaiXin EK"
+	type      = "uri"
+	author    = "EKFiddle2Yara v1.0"
+	date      = "2021-03-12"
+	reference = "none"
 
 condition:
-		cuckoo.network.http_request(/\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$/)
+	cuckoo.network.http_request(/\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$/)
 }
 ```
 
