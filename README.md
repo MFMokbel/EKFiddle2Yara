@@ -107,7 +107,7 @@ meta:
 	reference = "https://twitter.com/AffableKraut/status/1362429457932419078?s=20"
 
 strings:
-	$ekfl = /'replace','IMG','CVV'/
+	$ekfl = /'replace','IMG','CVV'/ nocase ascii
 condition:
 	$ekfl
 }
