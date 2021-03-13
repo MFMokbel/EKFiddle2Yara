@@ -70,7 +70,7 @@ Usage:
 3. For rules of the type Hash, the tool generates Yara conditions that use the Hash module syntax. It doesn't make sense otherwise.
 4. Starting with version 2.0, Yara uses its own regex engine, a limited one compared to PCRE and RE libraries it used to use in previous versions. The list of some of the regex features it doesn't support include: *backreferences, positive/negative lookahead, positive/negative lookbehind, non-capturing groups, regex case-insensitive flags (?i) and (?-i), the mix of greedy and non-greedy quantifiers in the same regex string, atomic groups, possessive quantifiers.*
    * When a regex/logic payload is found to contain a negative lookahead, a specific comment is added to the Yara rule meta section. There is no alternative for negative lookahead.
-   * By default, the tool massages the regex such that it removes most of the non-allowed regex features. This behaviour could be overridden by setting the option to false "**--mrgx=false**"
+   * By default, the tool massages the regex such that it removes most of the non-allowed regex features. This behaviour could be overridden by setting the option **--mrgx** to **false** "**--mrgx=false**"
 
 # Example
 
