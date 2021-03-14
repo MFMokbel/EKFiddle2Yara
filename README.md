@@ -42,9 +42,9 @@ condition:
 	$ekfl
 }
 ```
-* <*normalized name*> is the **name** parsed such that only alphanumeric characters are allowed, and all other characters are replaced with '_'
+* <*normalized name*> is the **name** parsed such that only alphanumeric characters are accepted, and all white-space characters are replaced with '_'.
 * <*random number*> is a random number that takes a value between 0 and 90000. This is to avoid collision with rules of the same name. Note that this value is different on every invocation.
-* The rest is self explanatory
+* The rest is self-explanatory
 
 # EKFiddle2Yara Rule Generation Options
 
