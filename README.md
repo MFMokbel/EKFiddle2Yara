@@ -53,14 +53,14 @@ Usage:
   EKFiddle2Yara [OPTION...]
 
   -f, --file arg  EKFiddle master regexes file (default: )
-  -u, --url arg   url to fetch EKFiddle master regexes from (default:
-                  https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt)
+  -u, --url arg   url to fetch EKFiddle master regexes from (default: https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt)
   -i, --ip        use VirusTotal cuckoo Yara module for rules of ip type
   -q, --query     use VirusTotal cuckoo Yara module for rules of uri type
   -n, --nocase    add nocase modifier to the rules
   -w, --wide      add wide modifier to the rules
   -a, --ascii     add ascii modifier to the rules
   -m, --mrgx      massage regex to work with Yara (default: true)
+  -r, --rnla      remove negative lookahead assertion(s) from regex (default: true)
   -s, --save arg  save Yara rule(s) to a file
   -p, --print     print Yara rules to the console (default: true)
   -h, --help      print usage
@@ -69,8 +69,8 @@ Usage:
 2. For rules of the types IP and URI, you could use the options "**-i/--ip**" and "**-q/--query**" to generate Yara conditions that use Cuckoo's module syntax.
 3. For rules of the type Hash, the tool generates Yara conditions that use the Hash module syntax. It doesn't make sense otherwise.
 4. Starting with version 2.0, Yara uses its own regex engine, a limited one compared to PCRE and RE libraries it used to use in previous versions. The list of some of the regex features it doesn't support include: *backreferences, positive/negative lookahead, positive/negative lookbehind, non-capturing groups, regex case-insensitive flags (?i) and (?-i), the mix of greedy and non-greedy quantifiers in the same regex string, atomic groups, possessive quantifiers.*
-   * When a regex/logic payload is found to contain a negative lookahead, a specific comment is added to the Yara rule meta section. There is no alternative for negative lookahead.
    * By default, the tool massages the regex such that it removes most of the non-allowed regex features. This behaviour could be overridden by setting the option **--mrgx** to **false** "**--mrgx=false**"
+   * When a regex/logic payload is found to contain a negative lookahead assertion, a specific comment is added to the Yara rule meta section, and the assertion is deleted from the regex. This behaviour could be overridden by setting the option **--rnla** to **false** "**--rnla=false**"
 
 # Example
 
