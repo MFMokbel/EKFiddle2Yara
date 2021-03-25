@@ -119,7 +119,7 @@ condition:
 - [cxxopts: for parsing command line arguments](https://github.com/jarro2783/cxxopts)
 - [Color Console: for console coloring](https://github.com/imfl/color-console)
  
-# Third-party libraries used
+# Release
 
 A 32-bit Binary release is located under the **Release** folder.
 
