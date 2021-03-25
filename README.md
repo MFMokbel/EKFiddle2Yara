@@ -121,7 +121,7 @@ condition:
  
 # Release
 
-A 32-bit Binary release is located under the **Release** folder.
+A 32-bit binary release is located under the **Release** folder.
 
 # Contributing
 
