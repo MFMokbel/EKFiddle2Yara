@@ -74,7 +74,7 @@ Usage:
 
 # Example
 
-- For example, to generate a Yara rule that uses Cuckoo module syntax for the **URI** rule shown above:
+- To generate a Yara rule that uses Cuckoo module syntax for the **URI** rule shown above:
 
 > *ekfiddle2yara.exe -q*
 
@@ -92,7 +92,7 @@ condition:
 	cuckoo.network.http_request(/\/hfs\/(cookie_do\.swf|\w{6}\.jar|swfobject\.js|jquery\.js)$/)
 }
 ```
-- For example, to generate a Yara rule that takes the ascii and nocase modifiers for the **SourceCode** rule shown above:
+- To generate a Yara rule that takes the ascii and nocase modifiers for the **SourceCode** rule shown above:
 
 > *ekfiddle2yara.exe -n -a*
 
