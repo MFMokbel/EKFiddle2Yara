@@ -61,6 +61,7 @@ Usage:
   -a, --ascii     add ascii modifier to the rules
   -m, --mrgx      massage regex to work with Yara (default: true)
   -r, --rnla      remove negative lookahead assertion(s) from regex (default: true)
+  -d, --da        discard start(^) and end($) of string anchors from regex (default: true)
   -s, --save arg  save Yara rule(s) to a file
   -p, --print     print Yara rules to the console (default: true)
   -h, --help      print usage
