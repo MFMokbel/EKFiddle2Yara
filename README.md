@@ -123,6 +123,7 @@ condition:
 # Release
 
 A 32-bit binary release is located under the **Release** folder.
+- ver: 1.0 (32-bit) - rel: Trisolaris - may 19, 2021
 
 # Contributing
 
