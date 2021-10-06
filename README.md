@@ -15,12 +15,18 @@ Hash	TSS Browlock (audio)	0589be7715d2320e559eae6bd26f3528e97450c70293da2e1e8ce4
 
 Each of the elements of the rule is deimited by a tab '\t'. The rule consists of the following elements, in this specific order:
 
-1. **type**: takes either of the values (SourceCode|URI|IP|Headers|Hash)
+1. **type**: takes either of the values (SourceCode|URI|IP|Headers|Hash|Extract-Skimmer|Extract-Phone|Extract-CMS)
 2. **name**: for example, "Web Skimmer (Google exfil)"
 3. **logic**: detection logic (content match or a regex). For example, "'replace','IMG','CVV'"
 5. **reference**: this is usually a url pointing to the source of the logic (this is optional). For example, https://twitter.com/AffableKraut/status/1362429457932419078?s=20
 
 Note-1: Every line that starts with "##" in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file is a comment, and therefore is ignored.
+
+Recently (sometime after May 2021), some of the rules have been updated such that they don't follow aforementioned elements separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. 
+
+The transpiler accounts for these changes, nonetheless.
+
+For reference, you can get the old **MasterRegexes.txt** file from this repo, since it is not longer available on the official EKFiddle repo.
 
 # Yara rule format
 Generated Yara rule has the following format:
