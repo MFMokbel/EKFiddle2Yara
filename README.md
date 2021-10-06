@@ -22,9 +22,7 @@ Each of the elements of the rule is deimited by a tab '\t'. The rule consists of
 
 Note-1: Every line that starts with "##" in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file is a comment, and therefore is ignored.
 
-Recently (sometime after May 2021), some of the rules have been updated such that they don't follow aforementioned elements separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. 
-
-The transpiler accounts for these changes, nonetheless.
+Recently (sometime after May 2021), some of the rules have been updated such that they don't follow aforementioned elements separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. The transpiler accounts for these changes, nonetheless.
 
 For reference, you can get the old **MasterRegexes.txt** file from this repo, since it is not longer available on the official EKFiddle repo.
 
