@@ -24,6 +24,31 @@ Note-1: Every line that starts with "##" in the [Master Regexes](https://raw.git
 
 Recently (sometime after May 2021), some of the rules have been updated such that they don't follow aforementioned elements separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. The transpiler accounts for these changes, nonetheless.
 
+The rule type Extract-CMS has a slightly different logic. For example, the rule shown below still honours the '\t' separation between every element, except that this rule contains a digit element in addition to the content match. This digit (ex., 10) represents the minimum number of occurences of the content match/regex (ex., "\/wp-content\/") in the payload.
+
+```
+Extract-CMS	WordPress	\/wp-content\/	10
+```
+
+The converter accounts for this rule type by converting it as follows:
+
+```yara
+rule ekf_wordpress_10943 : extract_cms
+{
+meta:
+	name      = "WordPress"
+	type      = "extract-cms"
+	author    = "EKFiddle2Yara v1.0"
+	date      = "2021-10-06"
+	reference = "none"
+
+strings:
+        $ekfl = /\/wp-content\//
+condition:
+        #ekfl >= 10
+}
+```
+
 For reference, you can get the old **MasterRegexes.txt** file from this repo, since it is not longer available on the official EKFiddle repo.
 
 # Yara rule format
