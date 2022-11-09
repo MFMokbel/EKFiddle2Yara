@@ -81,7 +81,7 @@ condition:
 Usage:
   EKFiddle2Yara [OPTION...]
 
-  -f, --file arg  EKFiddle master regexes file (default: )
+  -f, --file arg  EKFiddle master regexes file
   -u, --url arg   url to fetch EKFiddle master regexes from (default: https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt)
   -i, --ip        use VirusTotal cuckoo Yara module for rules of ip type
   -q, --query     use VirusTotal cuckoo Yara module for rules of uri type
