@@ -1,6 +1,8 @@
 # EKFiddle2Yara
 EKFiddle2Yara is a tool that takes [EKFiddle](https://github.com/malwareinfosec/EKFiddle) rules and converts them into Yara rules. The tool provides a plethora of options to generate customized Yara rules.
 
+**Note**: The tool was first presented along with the threat-hunting framework [Crawlector](https://github.com/MFMokbel/Crawlector) at the [No Hat](https://www.nohat.it/2022/talks) conference in Bergamo, Italy on October 22nd, 2022 ([Slides](https://www.nohat.it/2022/static/slides/crawlector.pdf), [YouTube Recording](https://youtu.be/-9bupVXHo5Y)). Also, it was presented for the second time at the [AVAR](https://aavar.org/cybersecurity-conference/index.php/crawlector-a-threat-hunting-framework/) conference, in Singapore, on December 2nd, 2022.
+
 EKFiddle [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file contains such rules, and follows a specific format for each of the rules types.
 
 Each rule spans one line only. For example,
