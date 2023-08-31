@@ -3,7 +3,9 @@ EKFiddle2Yara is a tool that takes [EKFiddle](https://github.com/malwareinfosec/
 
 **Note**: The tool was first presented along with the threat-hunting framework [Crawlector](https://github.com/MFMokbel/Crawlector) at the [No Hat](https://www.nohat.it/2022/talks) conference in Bergamo, Italy on October 22nd, 2022 ([Slides](https://www.nohat.it/2022/static/slides/crawlector.pdf), [YouTube Recording](https://youtu.be/-9bupVXHo5Y)). Also, it was presented for the second time at the [AVAR](https://aavar.org/cybersecurity-conference/index.php/crawlector-a-threat-hunting-framework/) conference, in Singapore, on December 2nd, 2022.
 
-EKFiddle [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file contains such rules, and follows a specific format for each of the rules types.
+**Update [August 31, 2023]**: Version 1.1 has been released, adding support for the new operators **\*AND\*** and **\*OR\*** that were added recently to the EKFiddle rule language.
+
+EKFiddle [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file contains such rules and follows a specific format for each of the rules types.
 
 Each rule spans one line only. For example,
 
@@ -15,7 +17,7 @@ Headers	Malcdn Campaign	9d5e3=eyJ
 Hash	TSS Browlock (audio)	0589be7715d2320e559eae6bd26f3528e97450c70293da2e1e8ce45f77f99ab1|fc59bbb18f923747b9cd3f3b23537ff09c5ad2fdfc1505a4800a3f269a234e65|d6e8aff6202436d3d2c56f686ad04680f2e5afd6ac0e1e0911772e28f2471ad2
 ```
 
-Each of the elements of the rule is deimited by a tab '\t'. The rule consists of the following elements, in this specific order:
+Each of the elements of the rule is delimited by a tab '\t'. The rule consists of the following elements, in this specific order:
 
 1. **type**: takes either of the values (SourceCode|URI|IP|Headers|Hash|Extract-Skimmer|Extract-Phone|Extract-CMS)
 2. **name**: for example, "Web Skimmer (Google exfil)"
@@ -24,9 +26,9 @@ Each of the elements of the rule is deimited by a tab '\t'. The rule consists of
 
 Note-1: Every line that starts with "##" in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file is a comment, and therefore is ignored.
 
-Recently (sometime after May 2021), some of the rules have been updated such that they don't follow the aforementioned elements separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. The transpiler accounts for these changes, nonetheless.
+Recently (sometime after May 2021), some of the rules have been updated such that they don't follow the aforementioned elements' separation logic. These changes are specific to rules of the types, Extract-Skimmer (used to be under the SourceCode type) and Extract-Phone (new); these rules are stored in the [/Misc/ExtractionRules.txt](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Misc/ExtractionRules.txt) file. These rules used to be stored in the [Master Regexes](https://raw.githubusercontent.com/malwareinfosec/EKFiddle/master/Regexes/MasterRegexes.txt) file. The major difference is that the rule's type becomes the rule's name. The transpiler accounts for these changes, nonetheless.
 
-The rule type Extract-CMS has a slightly different logic. For example, the rule shown below still honors the '\t' separation between every element, except that this rule contains a digit element in addition to the content match. This digit (ex., 10) represents the minimum number of occurrences of the content match/regex (ex., "\/wp-content\/") in the payload.
+The rule type Extract-CMS has a slightly different logic. For example, the rule shown below still honours the '\t' separation between every element, except that this rule contains a digit element in addition to the content match. This digit (ex., 10) represents the minimum number of occurrences of the content match/regex (ex., "\/wp-content\/") in the payload.
 
 ```
 Extract-CMS	WordPress	\/wp-content\/	10
@@ -51,10 +53,10 @@ condition:
 }
 ```
 
-For reference, you can get the old **MasterRegexes.txt** file from this repo, since it is not longer available on the official EKFiddle repo.
+For reference, you can get the old **MasterRegexes.txt** file from this repo, since it is no longer available on the official EKFiddle repo.
 
 # Yara rule format
-Generated Yara rule has the following format:
+The generated Yara rule has the following format:
 
 ```yara
 rule ekf_<normalized name>_<random number> : <type>
@@ -153,7 +155,7 @@ condition:
  
 # Release
 
-A 32-bit & a 64-bit binary releases are located under the **Releases** folder.
+32-bit & 64-bit binary releases are located under the **Releases** folder.
 
 # Contributing
 
